@@ -23,7 +23,7 @@ const DashboardLayout = () => {
           width: 100}}
       >
       
-      <Stack direction="column" alignItems={"center"} sx={{width: "100%"}}>
+      <Stack direction="column" alignItems={"center"} sx={{width: "100%"}} spacing={3}>
         <Box sx={{
           backgroundColor: theme.palette.primary.main,
           height: 64,
@@ -32,9 +32,12 @@ const DashboardLayout = () => {
         }}>
         <img src={Logo} alt="Chat App Logo"/>    
         </Box>
-        {Nav_Buttons.map((el) => <IconButton key={el.index}>
-          {el.icon}
-        </IconButton>)}
+        <Stack spacing={3}>
+          {Nav_Buttons.map((el) => <IconButton key={el.index}>
+            {el.icon}
+          </IconButton>)}
+        </Stack>
+       
       </Stack>
       </Box>
       <Outlet />
