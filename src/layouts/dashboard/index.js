@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import React from "react";
 import { Outlet } from "react-router-dom";
@@ -13,7 +13,16 @@ const DashboardLayout = () => {
 
   return (
     <>
-      <Box sx={{backgroundColor: theme.palette.background.paper, boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)", height: "100vh", width: 100}}>
+      <Box 
+        p={2} //this means 2x8=16px
+        sx={{
+          backgroundColor: theme.palette.background.paper,
+          boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
+          height: "100vh",
+          width: 100}}
+      >
+      
+      <Stack direction="column" alignItems={"center"} sx={{width: "100%"}}>
         <Box sx={{
           backgroundColor: theme.palette.primary.main,
           height: 64,
@@ -22,6 +31,7 @@ const DashboardLayout = () => {
         }}>
         <img src={Logo} alt="Chat App Logo"/>    
         </Box>
+      </Stack>
       </Box>
       <Outlet />
     </>
