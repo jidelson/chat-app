@@ -1,10 +1,11 @@
-import { Box, IconButton, Stack } from "@mui/material";
+import { Box, Divider, IconButton, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import React from "react";
 import { Outlet } from "react-router-dom";
 
 import Logo from '../../assets/Images/logo.ico'
 import { Nav_Buttons } from "../../data";
+import { Gear } from "phosphor-react";
 
 const DashboardLayout = () => {
 
@@ -33,10 +34,17 @@ const DashboardLayout = () => {
         <img src={Logo} alt="Chat App Logo"/>    
         </Box>
         <Stack spacing={3}>
-          {Nav_Buttons.map((el) => <IconButton key={el.index}>
-            {el.icon}
-          </IconButton>)}
+          {Nav_Buttons.map((el) => 
+            <IconButton key={el.index}>
+              {el.icon}
+            </IconButton>)}
+          <Divider />
+          <IconButton>
+            <Gear />
+          </IconButton>
         </Stack>
+
+      
        
       </Stack>
       </Box>
