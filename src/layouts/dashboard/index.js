@@ -65,14 +65,16 @@ const DashboardLayout = () => {
               p={1} 
               sx={{backgroundColor: theme.palette.primary.main, borderRadius: 1.5 }}
             >
-              <IconButton>
+              <IconButton sx={{width:"max-content", color: "#fff"}}>
                 <Gear />
               </IconButton>
             </Box>
             :
             <IconButton  onClick={() => {
               setSelected(3)
-            }}>
+            }}
+            sx={{width: "max-content", color: "#000"}}
+            >
               <Gear />
             </IconButton>
           }
