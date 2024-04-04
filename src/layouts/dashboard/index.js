@@ -107,7 +107,7 @@ const DashboardLayout = () => {
               onClick={() => {
                 setSelected(el.index)
               }}
-              sx={{width: "max-content", color: "#000"}}
+              sx={{width: "max-content", color: theme.palette.mode ==="light" ? "#000" : theme.palette.text.primary}}
               key={el.index}
             >
                 {el.icon}
@@ -127,7 +127,7 @@ const DashboardLayout = () => {
             <IconButton  onClick={() => {
               setSelected(3)
             }}
-            sx={{width: "max-content", color: "#000"}}
+            sx={{width: "max-content", color: theme.palette.mode ==="light" ? "#000" : theme.palette.text.primary}}
             >
               <Gear />
             </IconButton>
