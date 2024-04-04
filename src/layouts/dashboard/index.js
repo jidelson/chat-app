@@ -59,10 +59,24 @@ const DashboardLayout = () => {
                 {el.icon}
               </IconButton>
             ))}
-          <Divider />
-          <IconButton>
-            <Gear />
-          </IconButton>
+          <Divider sx={{width: "48px"}} />
+          {selected === 3 ? //this 3 value and below 3 value in setSelected coming from NavButtons in /src/data/index.js
+            <Box 
+              p={1} 
+              sx={{backgroundColor: theme.palette.primary.main, borderRadius: 1.5 }}
+            >
+              <IconButton>
+                <Gear />
+              </IconButton>
+            </Box>
+            :
+            <IconButton  onClick={() => {
+              setSelected(3)
+            }}>
+              <Gear />
+            </IconButton>
+          }
+        
         </Stack>
 
       
