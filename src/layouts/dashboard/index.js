@@ -1,7 +1,8 @@
-import { Box, Divider, IconButton, Stack } from "@mui/material";
+import { Avatar, Box, Divider, IconButton, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { faker } from "@faker-js/faker";
 
 import Logo from '../../assets/Images/logo.ico'
 import { Nav_Buttons } from "../../data";
@@ -26,7 +27,14 @@ const DashboardLayout = () => {
           width: 100}}
       >
       
-      <Stack direction="column" alignItems={"center"} sx={{width: "100%"}} spacing={3}>
+      <Stack 
+        direction="column" 
+        alignItems={"center"}
+        justifyContent="space-between" 
+        sx={{height: "100%"}} 
+        spacing={3}
+      >
+      <Stack alignItems={"center"} spacing={4}>
         <Box sx={{
           backgroundColor: theme.palette.primary.main,
           height: 64,
@@ -80,7 +88,12 @@ const DashboardLayout = () => {
           }
         
         </Stack>
-
+        </Stack>
+        
+        <Stack>
+          <Avatar src={faker.image.avatar()} />
+        </Stack>
+        
       
        
       </Stack>
