@@ -36,7 +36,8 @@ const Conversation = () => {
     return (
         <Stack height={"100%"} maxHeight={"100vh"} width={"auto"} >
             {/* Chat Header */}
-            <Box 
+            <Box
+                p={2} 
                 sx={{
                     height: 100, 
                     width: "100%", 
