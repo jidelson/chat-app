@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Box, Avatar, Badge } from '@mui/material';
+import { Stack, Box, Avatar, Badge, Typography } from '@mui/material';
 import { faker } from '@faker-js/faker';
 import { styled } from '@mui/material/styles';
 
@@ -62,7 +62,12 @@ const Conversation = () => {
                             >
                                 <Avatar alt={faker.name.fullName()} src={faker.image.avatar()} />
                             </StyledBadge>
+                            
                         </Box>
+                        <Stack spacing={0.2}>
+                                <Typography variant='subtitle2'>{faker.name.fullName()}</Typography>
+                                <Typography variant='caption'>Online</Typography>
+                            </Stack>
                     </Stack>
                 </Stack>
             </Box>
