@@ -63,7 +63,7 @@ const DashboardLayout = () => {
   const {onToggleMode} = useSettings(); //custom hook that calls useContext which calls SettingsContext , in /hooks/useSettings
 
   return (
-    <>
+    <Stack direction="row" >
       <Box 
         p={2} //this means 2x8=16px
         sx={{
@@ -148,7 +148,7 @@ const DashboardLayout = () => {
       </Stack>
       </Box>
       <Outlet />
-    </>
+    </Stack>
   );
 };
 
