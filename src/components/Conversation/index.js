@@ -52,7 +52,14 @@ const Conversation = () => {
                 >
                     <Stack direction={"row"} spacing={2}>
                         <Box>
-                            <StyledBadge>
+                            <StyledBadge 
+                                overlap='circular'
+                                anchorOrigin={{
+                                    vertical: "bottom",
+                                    horizontal: "right"
+                                }}
+                                variant='dot' 
+                            >
                                 <Avatar alt={faker.name.fullName()} src={faker.image.avatar()} />
                             </StyledBadge>
                         </Box>
