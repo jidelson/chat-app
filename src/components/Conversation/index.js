@@ -1,8 +1,9 @@
 import React from 'react';
 import { Stack, Box, Avatar, Badge, Typography, IconButton, Divider, TextField, InputAdornment } from '@mui/material';
 import { faker } from '@faker-js/faker';
-import { styled } from '@mui/material/styles';
-import { VideoCamera, Phone, MagnifyingGlass, CaretDown, LinkSimple, Smiley } from 'phosphor-react';
+import { styled, useTheme } from '@mui/material/styles';
+import { VideoCamera, Phone, MagnifyingGlass, CaretDown, LinkSimple, Smiley, PaperPlaneTilt } from 'phosphor-react';
+
 
 const StyledInput = styled(TextField)(({ theme }) => ({
     "& .MuiInputBase-input" : {
@@ -41,6 +42,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   }));
 
 const Conversation = () => {
+    const theme = useTheme();
     return (
         <Stack height={"100%"} maxHeight={"100vh"} width={"auto"} >
             {/* Chat Header */}
@@ -121,6 +123,20 @@ const Conversation = () => {
                          </IconButton>
                      </InputAdornment>
                     }} />
+                    <Box 
+                        sx={{
+                            height: 48, 
+                            width: 48, 
+                            backgroundColor: theme.palette.primary.main, 
+                            borderRadius: 1.5}}
+                    >
+                        <Stack sx={{height: "100%", width:"100%"}} alignItems="center" justifyContent="center"  >
+                            <IconButton>
+                                <PaperPlaneTilt color='#fff' />
+                            </IconButton>
+                        </Stack>
+                        
+                    </Box>
                 </Stack>
             </Box>
         </Stack>
