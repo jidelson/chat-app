@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack, Box, Avatar, Badge, Typography, IconButton, Divider } from '@mui/material';
 import { faker } from '@faker-js/faker';
 import { styled } from '@mui/material/styles';
-import { VideoCamera, Phone, MagnifyingGlass } from 'phosphor-react';
+import { VideoCamera, Phone, MagnifyingGlass, CaretDown } from 'phosphor-react';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -40,7 +40,6 @@ const Conversation = () => {
             <Box
                 p={2} 
                 sx={{
-                    height: 100, 
                     width: "100%", 
                     backgroundColor: "#F8FAFF", 
                     boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)"
@@ -82,6 +81,9 @@ const Conversation = () => {
                             <MagnifyingGlass />
                         </IconButton>
                         <Divider orientation='vertical' flexItem/>
+                        <IconButton>
+                            <CaretDown />
+                        </IconButton>
                     </Stack>
                 </Stack>
             </Box>
