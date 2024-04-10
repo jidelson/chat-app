@@ -1,8 +1,8 @@
 import React from 'react';
-import { Stack, Box, Avatar, Badge, Typography, IconButton, Divider, TextField } from '@mui/material';
+import { Stack, Box, Avatar, Badge, Typography, IconButton, Divider, TextField, InputAdornment } from '@mui/material';
 import { faker } from '@faker-js/faker';
 import { styled } from '@mui/material/styles';
-import { VideoCamera, Phone, MagnifyingGlass, CaretDown } from 'phosphor-react';
+import { VideoCamera, Phone, MagnifyingGlass, CaretDown, LinkSimple } from 'phosphor-react';
 
 const StyledInput = styled(TextField)(({ theme }) => ({
     "& .MuiInputBase-input" : {
@@ -110,6 +110,11 @@ const Conversation = () => {
                 <Stack direction="row" alignItems={"center"} spacing={3} >
                     <StyledInput fullWidth placeholder='Write a message...' variant='filled' InputProps={{
                         disableUnderline: true,
+                        startAdornment: <InputAdornment>
+                            <IconButton>
+                                <LinkSimple />
+                            </IconButton>
+                        </InputAdornment>
                     }} />
                 </Stack>
             </Box>
