@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Box, Avatar, Badge, Typography, IconButton } from '@mui/material';
+import { Stack, Box, Avatar, Badge, Typography, IconButton, Divider } from '@mui/material';
 import { faker } from '@faker-js/faker';
 import { styled } from '@mui/material/styles';
 import { VideoCamera, Phone, MagnifyingGlass } from 'phosphor-react';
@@ -81,6 +81,7 @@ const Conversation = () => {
                         <IconButton>
                             <MagnifyingGlass />
                         </IconButton>
+                        <Divider orientation='vertical' flexItem/>
                     </Stack>
                 </Stack>
             </Box>
