@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack, Box, Avatar, Badge, Typography, IconButton, Divider, TextField, InputAdornment } from '@mui/material';
 import { faker } from '@faker-js/faker';
 import { styled } from '@mui/material/styles';
-import { VideoCamera, Phone, MagnifyingGlass, CaretDown, LinkSimple } from 'phosphor-react';
+import { VideoCamera, Phone, MagnifyingGlass, CaretDown, LinkSimple, Smiley } from 'phosphor-react';
 
 const StyledInput = styled(TextField)(({ theme }) => ({
     "& .MuiInputBase-input" : {
@@ -114,7 +114,12 @@ const Conversation = () => {
                             <IconButton>
                                 <LinkSimple />
                             </IconButton>
-                        </InputAdornment>
+                        </InputAdornment>,
+                         endAdornment: <InputAdornment>
+                         <IconButton>
+                             <Smiley />
+                         </IconButton>
+                     </InputAdornment>
                     }} />
                 </Stack>
             </Box>
