@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Stack, Avatar, Divider, IconButton, Typography } from '@mui/material';
-import { CaretDown, MagnifyingGlass, MagnifyingGlassPlus, Phone, VideoCamera } from 'phosphor-react';
+import { CaretDown, MagnifyingGlass,  Phone, VideoCamera } from 'phosphor-react';
 import { useTheme } from '@mui/material/styles';
 import { faker } from '@faker-js/faker';
 import StyledBadge from '../StyledBadge';
