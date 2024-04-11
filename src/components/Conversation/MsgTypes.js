@@ -2,6 +2,29 @@ import React from 'react';
 import { Stack, Divider, Typography, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
+const MediaMsg = ({el}) => {
+    const theme = useTheme();
+    return (
+        <Stack direction="row" justifyContent={el.incoming ? "start" : "end"} >
+            <Box 
+                p={1.5} 
+                sx={{
+                    backgroundColor: el.incoming 
+                    ? theme.palette.background.default 
+                    : theme.palette.primary.main,
+                borderRadius: 1.5, //1.5 * 8 = 12px
+                width: "max-content"
+                }} 
+            >
+                <Stack spacing={1} >
+                    <img src={el.img} alt={el.message} style={{ maxHeight: 210, borderRadius: "10px" }} />
+                </Stack>
+
+            </Box>
+        </Stack>
+    );
+};
+
 
 const TextMsg = ({el}) => {
     const theme = useTheme();
@@ -9,7 +32,10 @@ const TextMsg = ({el}) => {
         <Stack direction="row" justifyContent={el.incoming ? "start" : "end"} >
             <Box 
                 p={1.5} 
-                sx={{backgroundColor: el.incoming ? theme.palette.background.default : theme.palette.primary.main,
+                sx={{
+                    backgroundColor: el.incoming 
+                    ? theme.palette.background.default 
+                    : theme.palette.primary.main,
                 borderRadius: 1.5, //1.5 * 8 = 12px
                 width: "max-content"
                 }} 
@@ -31,4 +57,4 @@ const Timeline = ({el}) => {
     </Stack>;
 };
 
-export  { Timeline, TextMsg };
+export  { Timeline, TextMsg, MediaMsg };
