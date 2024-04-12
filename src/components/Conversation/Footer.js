@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Box, Stack, IconButton, InputAdornment, TextField  } from '@mui/material';
 import { LinkSimple, Smiley, PaperPlaneTilt } from 'phosphor-react';
 import { styled, useTheme } from '@mui/material/styles';
@@ -13,7 +13,7 @@ const StyledInput = styled(TextField)(({ theme }) => ({
     }
 }))
 
-const ChatInput = () => {
+const ChatInput = ({setOpenPicker}) => {
     return (
         <StyledInput 
             fullWidth 
@@ -30,7 +30,9 @@ const ChatInput = () => {
                 ),
                 endAdornment: (
                     <InputAdornment>
-                        <IconButton>
+                        <IconButton onClick={() => {
+                            setOpenPicker((prev) => !prev); // i am setting pickerState to previous value and when it is clicked it will set to the opposite state (open or closed)
+                        }}>
                             <Smiley />
                         </IconButton>
                     </InputAdornment>
@@ -42,6 +44,7 @@ const ChatInput = () => {
 
 const Footer = () => {
     const theme = useTheme();
+    const [openPicker, setOpenPicker] = useState(false);
     return (
         <Box 
             p={2}
@@ -53,11 +56,19 @@ const Footer = () => {
             >
                 <Stack direction="row" alignItems={"center"} spacing={3}>
                     <Stack sx={{width: "100%"}} >
-                        <Box sx={{zIndex: 10, position: "fixed", bottom: 81, right: 100 }} >
+                        <Box 
+                            sx={{ 
+                                display: openPicker ? "inline" : "none", 
+                                zIndex: 10, 
+                                position: "fixed", 
+                                bottom: 81, 
+                                right: 100 
+                                }} 
+                        >
                             <Picker theme={theme.palette.mode} data={data} onEmojiSelect={console.log} />
                         </Box>
                         
-                        <ChatInput />
+                        <ChatInput setOpenPicker={setOpenPicker} />
                     </Stack>
                    
                     
