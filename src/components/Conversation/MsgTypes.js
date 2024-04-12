@@ -1,7 +1,7 @@
 import React from 'react';
-import { Stack, Divider, Typography, Box, Link } from '@mui/material';
+import { Stack, Divider, Typography, Box, Link, IconButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Image } from 'phosphor-react';
+import { Image, DownloadSimple } from 'phosphor-react';
 
 const DocMsg = ({el}) => {
     const theme = useTheme();
@@ -29,6 +29,12 @@ const DocMsg = ({el}) => {
                         }} 
                     >
                         <Image  size={48} />
+                        <Typography variant='caption' >
+                            Abstract.png
+                        </Typography>
+                        <IconButton>
+                            <DownloadSimple />
+                        </IconButton>
                     </Stack>
                 </Stack>
             </Box>
@@ -161,7 +167,10 @@ const TextMsg = ({el}) => {
                 width: "max-content"
                 }} 
             >
-                <Typography variant='body2' color={el.incoming ? theme.palette.text : "#fff"} >
+                <Typography 
+                    variant='body2' 
+                    color={el.incoming ? theme.palette.text : "#fff"} 
+                >
                     {el.message}
                 </Typography>
             </Box>
@@ -171,11 +180,14 @@ const TextMsg = ({el}) => {
 
 const Timeline = ({el}) => {
     const theme = useTheme();
-    return <Stack direction="row" alignItems="center" justifyContent="space-between">
+    return (<Stack direction="row" alignItems="center" justifyContent="space-between">
         <Divider width="46%" />
-        <Typography variant='caption' sx={{color: theme.palette.text}} >{el.text}</Typography>
+        <Typography variant='caption' sx={{color: theme.palette.text}}>
+            {el.text}
+        </Typography>
         <Divider width="46%" />
-    </Stack>;
+    </Stack>
+    );
 };
 
 export  { Timeline, TextMsg, MediaMsg, ReplyMsg, LinkMsg, DocMsg };
