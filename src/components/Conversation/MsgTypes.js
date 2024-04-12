@@ -134,10 +134,13 @@ const ReplyMsg = ({el}) => {
     );
 };
 
-const MediaMsg = ({el}) => {
+const MediaMsg = ({ el }) => {
     const theme = useTheme();
     return (
-        <Stack direction="row" justifyContent={el.incoming ? "start" : "end"} >
+        <Stack 
+            direction="row" 
+            justifyContent={el.incoming ? "start" : "end"} 
+        >
             <Box 
                 p={1.5} 
                 sx={{
@@ -154,7 +157,7 @@ const MediaMsg = ({el}) => {
                         alt={el.message} 
                         style={{ maxHeight: 210, borderRadius: "10px" }} 
                     />
-                    <Typography variant='body2' color={el.incoming ? theme.palette.text : "#fff"} >
+                    <Typography variant="body2" color={el.incoming ? theme.palette.text : "#fff"} >
                         {el.message}
                     </Typography>
                 </Stack>
@@ -165,7 +168,7 @@ const MediaMsg = ({el}) => {
 };
 
 
-const TextMsg = ({el}) => {
+const TextMsg = ({ el }) => {
     const theme = useTheme();
     return (
         <Stack direction="row" justifyContent={el.incoming ? "start" : "end"} >
