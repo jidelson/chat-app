@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import { Box, Stack, IconButton, InputAdornment, TextField, Fab } from '@mui/material';
+import { Box, Stack, IconButton, InputAdornment, TextField, Fab, Tooltip } from '@mui/material';
 import { LinkSimple, Smiley, PaperPlaneTilt, Camera, File, Image, Sticker, User } from 'phosphor-react';
 import { styled, useTheme } from '@mui/material/styles';
 import data from '@emoji-mart/data'
@@ -58,9 +58,11 @@ const ChatInput = ({setOpenPicker}) => {
                     <Stack sx={{width: 'max-content'}}>
                         <Stack sx={{position: "relative"  }} >
                             {Actions.map((el) => (
-                                <Fab sx={{position: "absolute", top: -el.y, backgroundColor: el.color}}>
-                                {el.icon}
-                              </Fab>
+                               <Tooltip title={el.title}>
+                                    <Fab sx={{position: "absolute", top: -el.y, backgroundColor: el.color}}>
+                                        {el.icon}
+                                    </Fab>
+                               </Tooltip>
                             ))}
                         </Stack>
                         <InputAdornment>
