@@ -58,7 +58,7 @@ const ChatInput = ({setOpenPicker}) => {
                     <Stack sx={{width: 'max-content'}}>
                         <Stack sx={{position: "relative"  }} >
                             {Actions.map((el) => (
-                               <Tooltip title={el.title}>
+                               <Tooltip placement='right'  title={el.title}>
                                     <Fab sx={{position: "absolute", top: -el.y, backgroundColor: el.color}}>
                                         {el.icon}
                                     </Fab>
