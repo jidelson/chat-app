@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
-import { Box, Stack, IconButton, InputAdornment, TextField  } from '@mui/material';
-import { LinkSimple, Smiley, PaperPlaneTilt } from 'phosphor-react';
+import { Box, Stack, IconButton, InputAdornment, TextField, Fab } from '@mui/material';
+import { LinkSimple, Smiley, PaperPlaneTilt, Camera, File, Image, Sticker, User } from 'phosphor-react';
 import { styled, useTheme } from '@mui/material/styles';
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
@@ -11,7 +11,40 @@ const StyledInput = styled(TextField)(({ theme }) => ({
         paddingTop: "12px",
         paddingBottom: "12px"
     }
-}))
+}));
+
+const Actions = [
+    {
+        color: "#4da5fe",
+        icon: <Image size={24} />,
+        y: 102,
+        title: "Photo/Video"
+    },
+    {
+        color: "#1b8cfe",
+        icon: <Sticker size={24} />,
+        y: 172,
+        title: "Stickers"
+    },
+    {
+        color: "#0172e4",
+        icon: <Camera size={24} />,
+        y: 242,
+        title: "Image"
+    },
+    {
+        color: "#0159b2",
+        icon: <File size={24} />,
+        y: 312,
+        title: "Document"
+    },
+    {
+        color: "#013f7f",
+        icon: <User size={24} />,
+        y: 382,
+        title: "Contact"
+    }
+];
 
 const ChatInput = ({setOpenPicker}) => {
     return (
@@ -22,11 +55,20 @@ const ChatInput = ({setOpenPicker}) => {
             InputProps={{
                 disableUnderline: true,
                 startAdornment: (
-                    <InputAdornment>
-                        <IconButton>
-                            <LinkSimple />
-                        </IconButton>
-                    </InputAdornment>
+                    <Stack sx={{width: 'max-content'}}>
+                        <Stack sx={{position: "relative"  }} >
+                            {Actions.map((el) => (
+                                <Fab sx={{position: "absolute", top: -el.y, backgroundColor: el.color}}>
+                                {el.icon}
+                              </Fab>
+                            ))}
+                        </Stack>
+                        <InputAdornment>
+                            <IconButton>
+                                <LinkSimple />
+                            </IconButton>
+                        </InputAdornment>
+                    </Stack>
                 ),
                 endAdornment: (
                     <InputAdornment>
