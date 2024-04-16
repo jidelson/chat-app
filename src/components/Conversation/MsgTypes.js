@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack, Divider, Typography, Box, Link, IconButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Image, DownloadSimple } from 'phosphor-react';
+import { Image, DownloadSimple, DotsThreeVertical } from 'phosphor-react';
 
 const DocMsg = ({el}) => {
     const theme = useTheme();
@@ -189,6 +189,7 @@ const TextMsg = ({ el }) => {
                     {el.message}
                 </Typography>
             </Box>
+            <DotsThreeVertical size={20}/>
         </Stack>
     );
 };
