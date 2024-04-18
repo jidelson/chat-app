@@ -26,3 +26,19 @@ const slice = createSlice({
 
 //Reducer
 export default slice.reducer;
+
+
+export function ToggleSidebar(){
+    return async () => {
+        dispatch(slice.actions.toggleSidebar()) //dont need to provide toggleSidebar w/ data i am not using "action" around ln 18
+    }
+};
+
+
+export function UpdateSidebarType(type){
+    return async () => {
+        dispatch(slice.actions.updateSidebarType({
+            type,
+        }))
+    }
+};
