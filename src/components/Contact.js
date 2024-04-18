@@ -1,7 +1,7 @@
 import { useTheme } from '@mui/material/styles';
 import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { X } from 'phosphor-react';
+import { Phone, X } from 'phosphor-react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/app';
 import { faker } from '@faker-js/faker';
@@ -60,6 +60,16 @@ const Contact = () => {
                             </Typography>
                             <Typography variant="body2" fontWeight={500}>
                                 {'925 123 4567'}
+                            </Typography>
+                        </Stack>
+                    </Stack>
+                    <Stack direction="row" alignItems={"center"} justifyContent="space-evenly" >
+                        <Stack spacing={1} alignItems="center" >
+                            <IconButton>
+                                <Phone />
+                            </IconButton>
+                            <Typography variant='overline'>
+                                Voice
                             </Typography>
                         </Stack>
                     </Stack>
