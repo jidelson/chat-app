@@ -2,10 +2,14 @@ import { useTheme } from '@mui/material/styles';
 import { Box, IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { X } from 'phosphor-react';
+import { useDispatch } from 'react-redux';
+import { ToggleSidebar } from '../redux/slices/app';
 
 const Contact = () => {
 
     const theme = useTheme();
+
+    const dispatch = useDispatch();
     return (
         <Box sx={{width: 320, height: "100vh"}} >
             <Stack sx={{height: "100%"}}  >
@@ -22,7 +26,9 @@ const Contact = () => {
                         spacing={3}
                     >
                         <Typography variant='subtitle2'>Contact Info</Typography>
-                        <IconButton>
+                        <IconButton onClick={() => {
+                            dispatch(ToggleSidebar())
+                        }}>
                             <X />
                         </IconButton>
 
