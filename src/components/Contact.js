@@ -54,8 +54,13 @@ const Contact = () => {
                             alt={faker.name.firstName()} 
                             sx={{height: 64, width: 64}}    
                         />
-                        <Stack>
-                            
+                        <Stack spacing={0.5} >
+                            <Typography variant="article" fontWeight={600}>
+                                {faker.name.fullName()}
+                            </Typography>
+                            <Typography variant="body2" fontWeight={500}>
+                                {'925 123 4567'}
+                            </Typography>
                         </Stack>
                     </Stack>
                 </Stack>
