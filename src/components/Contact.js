@@ -1,9 +1,10 @@
 import { useTheme } from '@mui/material/styles';
-import { Box, IconButton, Stack, Typography } from '@mui/material';
+import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { X } from 'phosphor-react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/app';
+import { faker } from '@faker-js/faker';
 
 const Contact = () => {
 
@@ -12,7 +13,8 @@ const Contact = () => {
     const dispatch = useDispatch();
     return (
         <Box sx={{width: 320, height: "100vh"}} >
-            <Stack sx={{height: "100%"}}  >
+            <Stack sx={{height: "100%"}}>
+                {/* Header */}
                 <Box sx={{
                     boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
                     width: "100%",
@@ -35,6 +37,28 @@ const Contact = () => {
                     </Stack>
 
                 </Box>
+                {/* Body */}
+                <Stack 
+                    sx={{
+                        height: "100%", 
+                        position: "relative", 
+                        flexGrow: 1, 
+                        overflowY: "scroll"
+                        }}
+                    p={3}
+                    spacing={3} 
+                >
+                    <Stack alignItems={"center"} direction="row" spacing={2} >
+                        <Avatar  
+                            src={faker.image.avatar()} 
+                            alt={faker.name.firstName()} 
+                            sx={{height: 64, width: 64}}    
+                        />
+                        <Stack>
+                            
+                        </Stack>
+                    </Stack>
+                </Stack>
             </Stack>
         </Box>
     );
