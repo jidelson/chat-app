@@ -101,6 +101,7 @@ const Contact = () => {
                             </Box>
                         ))}
                     </Stack>
+                    <Divider />
                 </Stack>
             </Stack>
         </Box>
