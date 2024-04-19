@@ -1,7 +1,7 @@
 import { useTheme } from '@mui/material/styles';
-import { Avatar, Box, Divider, IconButton, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Button, Divider, IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { Phone, VideoCamera, X } from 'phosphor-react';
+import { CaretRight, Phone, VideoCamera, X } from 'phosphor-react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/app';
 import { faker } from '@faker-js/faker';
@@ -87,6 +87,12 @@ const Contact = () => {
                         <Typography variant='body2'>No matter what people tell you, words and ideas can change the world</Typography>
                     </Stack>
                     <Divider />
+                    <Stack direction="row" alignItems={"center"} justifyContent="space-between" >
+                        <Typography variant='subtitle2'>Media, Links & Docs</Typography>
+                        <Button endIcon={<CaretRight />} >
+                            401
+                        </Button>
+                    </Stack>
                 </Stack>
             </Stack>
         </Box>
