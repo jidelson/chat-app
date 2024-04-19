@@ -82,6 +82,11 @@ const Contact = () => {
                         </Stack>
                     </Stack>
                     <Divider />
+                    <Stack spacing={0.5} > {/* this is 4px */}
+                        <Typography variant='article'>About</Typography>
+                        <Typography variant='body2'>No matter what people tell you, words and ideas can change the world</Typography>
+                    </Stack>
+                    <Divider />
                 </Stack>
             </Stack>
         </Box>
