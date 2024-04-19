@@ -1,5 +1,5 @@
 import { useTheme } from '@mui/material/styles';
-import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Divider, IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { Phone, VideoCamera, X } from 'phosphor-react';
 import { useDispatch } from 'react-redux';
@@ -81,6 +81,7 @@ const Contact = () => {
                             </Typography>
                         </Stack>
                     </Stack>
+                    <Divider />
                 </Stack>
             </Stack>
         </Box>
