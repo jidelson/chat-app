@@ -1,7 +1,7 @@
 import { useTheme } from '@mui/material/styles';
 import { Avatar, Box, Button, Divider, IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { CaretRight, Phone, VideoCamera, X } from 'phosphor-react';
+import { CaretRight, Phone, Star, VideoCamera, X } from 'phosphor-react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/app';
 import { faker } from '@faker-js/faker';
@@ -102,6 +102,10 @@ const Contact = () => {
                         ))}
                     </Stack>
                     <Divider />
+                    <Stack direction="row" alignItems="center" spacing={2}>
+                        <Star />
+                        <Typography variant='subtitle2'>Starred Messages</Typography>
+                    </Stack>
                 </Stack>
             </Stack>
         </Box>
