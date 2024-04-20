@@ -129,6 +129,14 @@ const Contact = () => {
                             <Typography variant='subtitle2' >Gambino, Bonanno, Colombo, You</Typography>
                         </Stack>
                     </Stack>
+                    <Stack direction="row" alignItems="center" spacing={2} > {/* 2x8 = 16px */}
+                        <Button fullWidth >
+                            Block
+                        </Button>
+                        <Button fullWidth >
+                            Delete
+                        </Button>
+                    </Stack>
                 </Stack>
             </Stack>
         </Box>
