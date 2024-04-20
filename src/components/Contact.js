@@ -120,6 +120,7 @@ const Contact = () => {
                         </Stack>
                         <AntSwitch />
                     </Stack>
+                    <Divider />
                 </Stack>
             </Stack>
         </Box>
