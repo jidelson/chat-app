@@ -105,7 +105,7 @@ const Contact = () => {
                     <Divider />
                     <Stack direction="row" alignItems={"center"} justifyContent="space-between" >
                         <Stack direction="row" alignItems="center" spacing={2}>
-                            <Star />
+                            <Star size={21} />
                             <Typography variant='subtitle2'>Starred Messages</Typography>
                         </Stack>
                         <IconButton>
@@ -115,7 +115,7 @@ const Contact = () => {
                     <Divider />
                     <Stack direction="row" alignItems={"center"} justifyContent="space-between" >
                         <Stack direction="row" alignItems="center" spacing={2}>
-                            <Bell />
+                            <Bell size={21} />
                             <Typography variant='subtitle2'>Mute Notifications</Typography>
                         </Stack>
                         <AntSwitch />
