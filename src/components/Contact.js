@@ -1,10 +1,11 @@
 import { useTheme } from '@mui/material/styles';
 import { Avatar, Box, Button, Divider, IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { CaretRight, Phone, Star, VideoCamera, X } from 'phosphor-react';
+import { Bell, CaretRight, Phone, Star, VideoCamera, X } from 'phosphor-react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/app';
 import { faker } from '@faker-js/faker';
+import AntSwitch from './AntSwitch';
 
 const Contact = () => {
 
@@ -112,6 +113,13 @@ const Contact = () => {
                         </IconButton>
                     </Stack>
                     <Divider />
+                    <Stack direction="row" alignItems={"center"} justifyContent="space-between" >
+                        <Stack direction="row" alignItems="center" spacing={2}>
+                            <Bell />
+                            <Typography variant='subtitle2'>Mute Notifications</Typography>
+                        </Stack>
+                        <AntSwitch />
+                    </Stack>
                 </Stack>
             </Stack>
         </Box>
