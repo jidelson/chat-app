@@ -111,6 +111,7 @@ const Contact = () => {
                             <CaretRight />
                         </IconButton>
                     </Stack>
+                    <Divider />
                 </Stack>
             </Stack>
         </Box>
