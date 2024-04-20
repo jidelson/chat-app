@@ -102,9 +102,14 @@ const Contact = () => {
                         ))}
                     </Stack>
                     <Divider />
-                    <Stack direction="row" alignItems="center" spacing={2}>
-                        <Star />
-                        <Typography variant='subtitle2'>Starred Messages</Typography>
+                    <Stack direction="row" alignItems={"center"} justifyContent="space-between" >
+                        <Stack direction="row" alignItems="center" spacing={2}>
+                            <Star />
+                            <Typography variant='subtitle2'>Starred Messages</Typography>
+                        </Stack>
+                        <IconButton>
+                            <CaretRight />
+                        </IconButton>
                     </Stack>
                 </Stack>
             </Stack>
