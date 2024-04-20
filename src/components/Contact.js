@@ -121,6 +121,14 @@ const Contact = () => {
                         <AntSwitch />
                     </Stack>
                     <Divider />
+                    <Typography>1 group in common</Typography>
+                    <Stack direction="row" spacing={2} alignItems="center" >
+                        <Avatar src={faker.image.avatar()} alt={faker.name.fullName()} />
+                        <Stack spacing={0.5} >
+                            <Typography variant='subtitle2' >Mob Bets</Typography>
+                            <Typography variant='subtitle2' >Gambino, Bonanno, Colombo, You</Typography>
+                        </Stack>
+                    </Stack>
                 </Stack>
             </Stack>
         </Box>
