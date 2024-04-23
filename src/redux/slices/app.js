@@ -39,6 +39,6 @@ export function UpdateSidebarType(type){
     return async () => {
         dispatch(slice.actions.updateSidebarType({
             type,
-        }))
-    }
+        }));
+    };
 };
