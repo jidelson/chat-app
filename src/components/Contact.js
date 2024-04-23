@@ -1,7 +1,7 @@
 import { useTheme } from '@mui/material/styles';
 import { Avatar, Box, Button, Divider, IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { Bell, CaretRight, Phone, Star, VideoCamera, X } from 'phosphor-react';
+import { Bell, CaretRight, Phone, Prohibit, Star, Trash, VideoCamera, X } from 'phosphor-react';
 import { useDispatch } from 'react-redux';
 import { ToggleSidebar } from '../redux/slices/app';
 import { faker } from '@faker-js/faker';
@@ -125,15 +125,15 @@ const Contact = () => {
                     <Stack direction="row" spacing={2} alignItems="center" >
                         <Avatar src={faker.image.avatar()} alt={faker.name.fullName()} />
                         <Stack spacing={0.5} >
-                            <Typography variant='subtitle2' >Mob Bets</Typography>
-                            <Typography variant='subtitle2' >Gambino, Bonanno, Colombo, You</Typography>
+                            <Typography variant='subtitle2' >Company Name</Typography>
+                            <Typography variant='subtitle2' >Group1, Group2, Group3, You</Typography>
                         </Stack>
                     </Stack>
                     <Stack direction="row" alignItems="center" spacing={2} > {/* 2x8 = 16px */}
-                        <Button fullWidth >
+                        <Button startIcon={<Prohibit />} fullWidth variant='outlined' >
                             Block
                         </Button>
-                        <Button fullWidth >
+                        <Button startIcon={<Trash />} fullWidth variant='outlined'>
                             Delete
                         </Button>
                     </Stack>
