@@ -3,6 +3,7 @@ import { Avatar, Box, Divider, IconButton, Stack, Typography } from '@mui/materi
 import { useTheme } from '@mui/material/styles';
 import { Bell, CaretLeft, Image, Info, Key, Keyboard, Lock, Note, PencilCircle } from 'phosphor-react';
 import { faker } from '@faker-js/faker';
+import Shortcuts from '../../sections/settings/Shortcuts';
 
 
 const Settings = () => {
@@ -117,6 +118,7 @@ const Settings = () => {
             </Box>
             {/* Right Panel */}
         </Stack> 
+        <Shortcuts open={true} handleClose={() => {}}  />
         </>
     );
 };
