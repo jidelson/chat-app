@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, IconButton, Stack, Typography } from '@mui/material';
+import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { CaretLeft } from 'phosphor-react';
+import { faker } from '@faker-js/faker';
 
 
 const Settings = () => {
@@ -34,6 +35,9 @@ const Settings = () => {
                         </Typography>
                     </Stack>
                     {/* Profile */}
+                    <Stack direction={"row"} spacing={3} >
+                        <Avatar sx={{width: 56, height: 56}} src={faker.image.avatar()} alt={faker.name.fullName()} />
+                    </Stack>
                     {/* List of options */}
                 </Stack>
             </Box>
