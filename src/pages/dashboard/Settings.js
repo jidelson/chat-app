@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, IconButton, Stack } from '@mui/material';
+import { Box, IconButton, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { CaretLeft } from 'phosphor-react';
 
@@ -27,9 +27,11 @@ const Settings = () => {
                     {/* Header */}
                     <Stack direction={"row"} alignItems="center" spacing={3}>
                         <IconButton>
-                            <CaretLeft />
+                            <CaretLeft  size={24} color={"#4B4B4B"} />
                         </IconButton>
-
+                        <Typography variant='h6' >
+                            Settings
+                        </Typography>
                     </Stack>
                     {/* Profile */}
                     {/* List of options */}
