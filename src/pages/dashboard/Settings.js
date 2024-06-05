@@ -1,13 +1,66 @@
 import React from 'react';
 import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { CaretLeft } from 'phosphor-react';
+import { Bell, CaretLeft, Image, Info, Key, Keyboard, Lock, Note, PencilCircle } from 'phosphor-react';
 import { faker } from '@faker-js/faker';
 
 
 const Settings = () => {
 
     const theme = useTheme();
+
+    const list = [
+        {
+            key: 0,
+            icon: <Bell size={20} />,
+            title: "Notifications",
+            onclick: () => {}
+        },
+        {
+            key: 1,
+            icon: <Lock size={20} />,
+            title: "Privacy",
+            onclick: () => {}
+        },
+        {
+            key: 2,
+            icon: <Key size={20} />,
+            title: "Security",
+            onclick: () => {}
+        },
+        {
+            key: 3,
+            icon: <PencilCircle size={20} />,
+            title: "Theme",
+            //onclick: handleOpenTheme
+            onclick: () => {}
+        },
+        {
+            key: 4,
+            icon: <Image size={20} />,
+            title: "Chat Wallpaper",
+            onclick: () => {}
+        },
+        {
+            key: 5,
+            icon: <Note size={20} />,
+            title: "Request Account Info",
+            onclick: () => {}
+        },
+        {
+            key: 6,
+            icon: <Keyboard size={20} />,
+            title: "Keyboard Shortcuts",
+            //onclick: handleOpenShortcuts
+            onclick: () => {}
+        },
+        {
+            key: 7,
+            icon: <Info size={20} />,
+            title: "Help",
+            onclick: () => {}
+        }
+    ]
 
     return (
         <>
@@ -37,8 +90,28 @@ const Settings = () => {
                     {/* Profile */}
                     <Stack direction={"row"} spacing={3} >
                         <Avatar sx={{width: 56, height: 56}} src={faker.image.avatar()} alt={faker.name.fullName()} />
+                        <Stack spacing={0.5}>
+                            <Typography variant='article' >
+                                {faker.name.fullName()}
+                            </Typography>
+                            <Typography variant='body2' >
+                                {faker.random.words()}
+                            </Typography>
+                        </Stack>
                     </Stack>
                     {/* List of options */}
+                    <Stack spacing={4} >
+                        {list.map(({key, icon, title, onclick}) => <>
+                            <Stack  sx={{cursor: "pointer"}} onclick={onclick}>
+                                <Stack direction="row" spacing={2} alignItems="center" >
+                                    {icon}
+                                    <Typography variant='body2'>{title}</Typography>
+                                </Stack>
+                            </Stack>
+
+
+                        </>)}
+                    </Stack>
                 </Stack>
             </Box>
             {/* Right Panel */}
