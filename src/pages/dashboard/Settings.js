@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Divider, IconButton, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Bell, CaretLeft, Image, Info, Key, Keyboard, Lock, Note, PencilCircle } from 'phosphor-react';
 import { faker } from '@faker-js/faker';
@@ -107,6 +107,7 @@ const Settings = () => {
                                     {icon}
                                     <Typography variant='body2'>{title}</Typography>
                                 </Stack>
+                                {key !== 7 && <Divider />}
                             </Stack>
 
 
