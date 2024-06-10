@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogTitle, Grid, Slide } from '@mui/material';
+import { Box, Button, Dialog, DialogContent, DialogTitle, Grid, Slide, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -102,7 +102,20 @@ const Shortcuts = ({open, handleClose}) => {
                 </DialogTitle>
                 <DialogContent sx={{mt: 4}}>
                     <Grid container spacing={3} >
-
+                        {list.map(({key, title, combination}) => 
+                            <Grid item xs={6} >
+                                <Stack sx={{width: "100%"}} justifyContent="space-between" spacing={3} direction="row" alignItems={"center"} >
+                                    <Typography variant='caption' sx={{fontSize: 14}}>{title}</Typography>
+                                    <Stack spacing={2} direction="row" >
+                                        {combination.map((el) => {
+                                            return <Button disabled variant='contained' sx={{color: "#212121"}}>
+                                                {el}
+                                            </Button>
+                                        })}
+                                    </Stack>
+                                </Stack>
+                            </Grid>
+                        )}
                     </Grid>
                 </DialogContent>
             </Dialog>   
