@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Avatar, Box, Divider, IconButton, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Bell, CaretLeft, Image, Info, Key, Keyboard, Lock, Note, PencilCircle } from 'phosphor-react';
@@ -10,56 +10,65 @@ const Settings = () => {
 
     const theme = useTheme();
 
+    const [openShortcuts, setOpenShortcuts] = useState(false);
+
+    const handleOpenShortCuts = () => {
+        setOpenShortcuts(true);
+    }
+
+    const handleCloseShortCuts = () => {
+        setOpenShortcuts(false);
+    }
+
     const list = [
         {
             key: 0,
             icon: <Bell size={20} />,
             title: "Notifications",
-            onclick: () => {}
+            onClick: () => {}
         },
         {
             key: 1,
             icon: <Lock size={20} />,
             title: "Privacy",
-            onclick: () => {}
+            onClick: () => {}
         },
         {
             key: 2,
             icon: <Key size={20} />,
             title: "Security",
-            onclick: () => {}
+            onClick: () => {}
         },
         {
             key: 3,
             icon: <PencilCircle size={20} />,
             title: "Theme",
-            //onclick: handleOpenTheme
-            onclick: () => {}
+            //onClick: handleOpenTheme,
+            onClick: () => {}
         },
         {
             key: 4,
             icon: <Image size={20} />,
             title: "Chat Wallpaper",
-            onclick: () => {}
+            onClick: () => {}
         },
         {
             key: 5,
             icon: <Note size={20} />,
             title: "Request Account Info",
-            onclick: () => {}
+            onClick: () => {}
         },
         {
             key: 6,
             icon: <Keyboard size={20} />,
             title: "Keyboard Shortcuts",
-            //onclick: handleOpenShortcuts
-            onclick: () => {}
+            onClick: handleOpenShortCuts
         },
         {
             key: 7,
             icon: <Info size={20} />,
             title: "Help",
-            onclick: () => {}
+            onClick: () => {}
         }
     ]
 
@@ -95,15 +104,13 @@ const Settings = () => {
                             <Typography variant='article' >
                                 {faker.name.fullName()}
                             </Typography>
-                            <Typography variant='body2' >
-                                {faker.random.words()}
-                            </Typography>
+                            <Typography variant='body2'>{faker.random.words()}</Typography>
                         </Stack>
                     </Stack>
                     {/* List of options */}
                     <Stack spacing={4} >
-                        {list.map(({key, icon, title, onclick}) => <>
-                            <Stack  sx={{cursor: "pointer"}} onclick={onclick}>
+                        {list.map(({key, icon, title, onClick}) => (<>
+                            <Stack spacing={2}  sx={{cursor: "pointer"}} onClick={onClick}>
                                 <Stack direction="row" spacing={2} alignItems="center" >
                                     {icon}
                                     <Typography variant='body2'>{title}</Typography>
@@ -112,13 +119,13 @@ const Settings = () => {
                             </Stack>
 
 
-                        </>)}
+                        </>))}
                     </Stack>
                 </Stack>
             </Box>
             {/* Right Panel */}
         </Stack> 
-        <Shortcuts open={true} handleClose={() => {}}  />
+        {openShortcuts && <Shortcuts open={openShortcuts} handleClose={handleCloseShortCuts}  />}
         </>
     );
 };
