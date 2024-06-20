@@ -1,9 +1,10 @@
 import { Container, Stack } from "@mui/material";
 import React from "react";
 import { Outlet } from "react-router-dom";
+
 import Logo from "../../assets/Images/logo.ico"
 
-const MainLayout = () => {
+const AuthLayout = () => {
   return (
     <>
     <Container sx={{mt: 5}} maxWidth="sm">
@@ -12,13 +13,10 @@ const MainLayout = () => {
           <img style={{height: 120, width: 120}} src={Logo} alt="Logo" />
         </Stack>
       </Stack>
-   
-      {/* <div>Main Layout</div> */}
-
       <Outlet />
-      </Container>
+    </Container>
     </>
   );
 };
 
-export default MainLayout;
+export default AuthLayout;

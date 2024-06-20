@@ -7,7 +7,7 @@ import DashboardLayout from "../layouts/dashboard";
 // config
 import { DEFAULT_PATH } from "../config";
 import LoadingScreen from "../components/LoadingScreen";
-import MainLayout from "../layouts/main";
+import AuthLayout from "../layouts/main";
 
 const Loadable = (Component) => (props) => {
   return (
@@ -21,7 +21,7 @@ export default function Router() {
   return useRoutes([
     {
       path: "/auth",
-      element: <MainLayout />,
+      element: <AuthLayout />,
       children: [
         {element: <LoginPage />, path: "login"}
       ]
