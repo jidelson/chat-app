@@ -1,4 +1,5 @@
-import { Divider } from '@mui/material';
+import { Divider, IconButton, Stack } from '@mui/material';
+import { GoogleLogo } from 'phosphor-react';
 import React from 'react';
 
 const AuthSocial = () => {
@@ -11,6 +12,11 @@ const AuthSocial = () => {
                  }}}>
                 OR
             </Divider>
+            <Stack direction={"row"} justifyContent="center" spacing={2}>
+                 <IconButton>
+                    <GoogleLogo color='#DF3E30' />    
+                 </IconButton>
+            </Stack>
         </div>
     );
 };
