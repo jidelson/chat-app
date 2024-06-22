@@ -55,22 +55,22 @@ const LoginForm = () => {
         >
             <Stack spacing={3} >
                 {!!errors.afterSubmit && <Alert severity='error'>{errors.afterSubmit.message}</Alert>}
+            
+
+                <RHFTextField name="email" label="Email address" />
+
+                <RHFTextField name="password" label="Password" type={showPassword ? "text" : "password"} InputProps={{
+                    endAdornment: (
+                        <InputAdornment>
+                            <IconButton onClick={() => {
+                                setShowPassword(!showPassword);
+                            }} >
+                                {showPassword ? <Eye /> : <EyeSlash />}
+                            </IconButton>
+                        </InputAdornment>
+                    )
+                }} />
             </Stack>
-
-            <RHFTextField name="email" label="Email address" />
-
-            <RHFTextField name="password" label="Password" type={showPassword ? "text" : "password"} InputProps={{
-                endAdornment: (
-                    <InputAdornment>
-                        <IconButton onClick={() => {
-                            setShowPassword(!showPassword);
-                        }} >
-                            {showPassword ? <Eye /> : <EyeSlash />}
-                        </IconButton>
-                    </InputAdornment>
-                )
-            }} />
-
 
         </FormProvider>
     );
