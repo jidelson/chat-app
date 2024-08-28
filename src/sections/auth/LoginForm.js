@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FormProvider from '../../components/hook-form/FormProvider';
 import { Stack } from '@mui/system';
-import { Alert, IconButton, InputAdornment, Link } from '@mui/material';
+import { Alert, Button, IconButton, InputAdornment, Link } from '@mui/material';
 import { RHFTextField } from '../../components/hook-form';
 import { Eye, EyeSlash } from 'phosphor-react';
 
@@ -76,6 +76,9 @@ const LoginForm = () => {
                     Forgot Password?
                 </Link>
             </Stack>
+            <Button fullWidth color='inherit' size='large' type='submit' variant='contained'>
+                Login
+            </Button>
 
         </FormProvider>
     );
