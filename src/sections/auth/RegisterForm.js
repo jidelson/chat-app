@@ -60,6 +60,8 @@ const RegisterForm = () => {
             <RHFTextField name="firstName" label="First Name" />
             <RHFTextField name="lastName" label="Last Name" />
         </Stack>
+            <RHFTextField name="email" label="Email" />
+            <RHFTextField name="password" label="Password" />
             </Stack>
        </FormProvider>
     );
