@@ -11,12 +11,20 @@ const Register = () => {
             </Typography>
 
             <Stack  direction={"row"} spacing={0.5}>
-                <Typography>Already have an account?</Typography>
+                <Typography variant='body2'>Already have an account?</Typography>
                 <Link component={RouterLink} to="/auth/login" variant='subtitle2'>
                 Sign in
                 </Link>
-
             </Stack>
+            {/* Register Form */}
+
+            <Typography component={"div"} sx={{color: "text.secondary", mt: 3, typography: 'caption', textAlign: 'center'}}>
+                {'By signing up, I agree to '}
+                <Link underline='always' color="text.primary">
+                    Terms of service
+                </Link>
+
+            </Typography>
         </Stack>
         </>
     );
