@@ -1,5 +1,6 @@
-import { Stack, Typography } from '@mui/material';
+import { Link, Stack, Typography } from '@mui/material';
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Register = () => {
     return (
@@ -8,6 +9,14 @@ const Register = () => {
             <Typography variant='h4' >
                 Get Started With Tawk
             </Typography>
+
+            <Stack  direction={"row"} spacing={0.5}>
+                <Typography>Already have an account?</Typography>
+                <Link component={RouterLink} to="/auth/login" variant='subtitle2'>
+                Sign in
+                </Link>
+
+            </Stack>
         </Stack>
         </>
     );
