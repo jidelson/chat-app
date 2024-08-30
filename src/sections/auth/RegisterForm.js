@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import FormProvider from "../../components/hook-form/FormProvider";
-import { Alert, IconButton, InputAdornment, Stack } from "@mui/material";
+import { Alert, Button, IconButton, InputAdornment, Stack } from "@mui/material";
 import { RHFTextField } from "../../components/hook-form";
 import { Eye, EyeSlash } from "phosphor-react";
 
@@ -81,6 +81,24 @@ const RegisterForm = () => {
           }}
         />
       </Stack>
+
+      <Button
+        fullWidth
+        color="inherit"
+        size="large"
+        type="submit"
+        variant="contained"
+        sx={{
+          bgcolor: "text.primary",
+          color: (theme) => theme.palette.mode === "light" ? "common.white" : "grey.800",
+          "&:hover": {
+            bgcolor: "text.primary",
+            color: (theme) => theme.palette.mode === "light" ? "common.white" : "grey.800"
+          }
+        }}
+      >
+        Create Account
+      </Button>
     </FormProvider>
   );
 };
