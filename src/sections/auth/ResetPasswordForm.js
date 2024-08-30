@@ -53,9 +53,7 @@ const ResetPasswordForm = () => {
         )}
 
         <RHFTextField name="email" label="Email address" />
-      </Stack>
-
-      <Button
+        <Button
         fullWidth
         color="inherit"
         size="large"
@@ -74,6 +72,9 @@ const ResetPasswordForm = () => {
       >
         Send Request
       </Button>
+      </Stack>
+
+     
     </FormProvider>
   );
 };
