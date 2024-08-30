@@ -80,9 +80,7 @@ const RegisterForm = () => {
             ),
           }}
         />
-      </Stack>
-
-      <Button
+        <Button
         fullWidth
         color="inherit"
         size="large"
@@ -99,6 +97,9 @@ const RegisterForm = () => {
       >
         Create Account
       </Button>
+      </Stack>
+
+      
     </FormProvider>
   );
 };
