@@ -2,6 +2,7 @@ import { Link, Stack, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import React from "react";
 import { CaretLeft } from "phosphor-react";
+import ResetPasswordForm from "../../sections/auth/ResetPasswordForm";
 
 const ResetPassword = () => {
   return (
@@ -16,6 +17,8 @@ const ResetPassword = () => {
         </Typography>
 
         {/* Reset Password Form */}
+    <ResetPasswordForm />
+
         <Link
           component={RouterLink}
           to="/auth/login"
