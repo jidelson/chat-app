@@ -58,7 +58,6 @@ const NewPasswordForm = () => {
           <Alert severity="error">{errors.afterSubmit.message}</Alert>
         )}
 
-
         <RHFTextField
           name="newPassword"
           label="New Password"
@@ -77,7 +76,7 @@ const NewPasswordForm = () => {
             ),
           }}
         />
-         <RHFTextField
+        <RHFTextField
           name="confirmPassword"
           label="Confirm Password"
           type={showPassword ? "text" : "password"}
@@ -95,27 +94,26 @@ const NewPasswordForm = () => {
             ),
           }}
         />
-      </Stack>
-      
-      <Button
-        fullWidth
-        color="inherit"
-        size="large"
-        type="submit"
-        variant="contained"
-        sx={{
-          bgcolor: "text.primary",
-          color: (theme) =>
-            theme.palette.mode === "light" ? "common.white" : "grey.800",
-          "&:hover": {
+        <Button
+          fullWidth
+          color="inherit"
+          size="large"
+          type="submit"
+          variant="contained"
+          sx={{
             bgcolor: "text.primary",
             color: (theme) =>
               theme.palette.mode === "light" ? "common.white" : "grey.800",
-          },
-        }}
-      >
-        Submit
-      </Button>
+            "&:hover": {
+              bgcolor: "text.primary",
+              color: (theme) =>
+                theme.palette.mode === "light" ? "common.white" : "grey.800",
+            },
+          }}
+        >
+          Submit
+        </Button>
+      </Stack>
     </FormProvider>
   );
 };
