@@ -2,6 +2,7 @@ import { Link, Stack, Typography } from "@mui/material";
 import { CaretLeft } from "phosphor-react";
 import { Link as RouterLink } from "react-router-dom";
 import React from "react";
+import NewPasswordForm from "../../sections/auth/NewPasswordForm";
 
 const NewPassword = () => {
   return (
@@ -17,6 +18,7 @@ const NewPassword = () => {
       </Stack>
 
       {/* New Password Form*/}
+      <NewPasswordForm />
 
       <Link
         component={RouterLink}
@@ -26,6 +28,7 @@ const NewPassword = () => {
         sx={{ mt: 3, mx: "auto", alignItems: "center", display: "inline" }}
       >
         <CaretLeft />
+        Return to sign in
       </Link>
     </>
   );
