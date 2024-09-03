@@ -1,13 +1,15 @@
-import { Box, Stack, Typography, Link } from "@mui/material";
+import { Box, Stack, Typography, Link, IconButton} from "@mui/material";
 import React from "react";
 import {
   Search,
   SearchIconWrapper,
   StyledInputBase,
 } from "../../components/Search";
-import { MagnifyingGlass } from "phosphor-react";
+import { MagnifyingGlass, Plus } from "phosphor-react";
+import {useTheme} from "@mui/material/styles";
 
 const Group = () => {
+    const theme = useTheme();
   return (
     <>
       <Stack direction={"row"} sx={{ width: "100%" }}>
@@ -39,10 +41,13 @@ const Group = () => {
                 />
               </Search>
             </Stack>
-            <Stack>
+            <Stack direction={"row"} justifyContent="space-between" alignItems={"center"}>
             <Typography variant="subtitle2" component={Link}>
                 Create New Group
             </Typography>
+            <IconButton>
+                <Plus style={{color: theme.palette.primary.main}} />
+            </IconButton>
             </Stack>
           </Stack>
         </Box>
