@@ -18,7 +18,11 @@ import { SimpleBarStyle } from "../../components/Scrollbar";
 //import Search from "../../components/Search/Search";
 //import StyledInputBase from "../../components/Search/StyledInputBase";
 //import SearchIconWrapper from "../../components/Search/SearchIconWrapper";
-import {Search, StyledInputBase, SearchIconWrapper} from "../../components/Search";
+import {
+  Search,
+  StyledInputBase,
+  SearchIconWrapper,
+} from "../../components/Search";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -97,8 +101,6 @@ const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
   );
 };
 
-
-
 const Chats = () => {
   const theme = useTheme();
   return (
@@ -130,7 +132,10 @@ const Chats = () => {
             <SearchIconWrapper>
               <MagnifyingGlass color="#709CE6" />
             </SearchIconWrapper>
-            <StyledInputBase placeholder="Search..." />
+            <StyledInputBase
+              placeholder="Search..."
+              inputProps={{ "aria-label": "search" }}
+            />
           </Search>
         </Stack>
         <Stack spacing={1}>
