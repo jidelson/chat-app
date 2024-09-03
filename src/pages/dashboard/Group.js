@@ -7,6 +7,9 @@ import {
 } from "../../components/Search";
 import { MagnifyingGlass, Plus } from "phosphor-react";
 import {useTheme} from "@mui/material/styles";
+import { SimpleBarStyle } from "../../components/Scrollbar";
+import { ChatList } from "../../data";
+import ChatElement from "../../components/ChatElement";
 
 const Group = () => {
     const theme = useTheme();
@@ -49,7 +52,24 @@ const Group = () => {
                 <Plus style={{color: theme.palette.primary.main}} />
             </IconButton>
             </Stack>
-            <Divider />
+                <Divider />
+                <Stack sx={{flexGrow: 1, overflow: "scroll", height: "100%"}}>
+                    <SimpleBarStyle timeout={500} clickOnTrack={false}>
+                        <Stack>
+                            {/* */}
+                            <Typography>Pinned</Typography>
+                            {/** Chat List */}
+                            {ChatList.filter((el) => el.pinned).map((el) => {
+                return <ChatElement {...el} />;
+              })}
+                        </Stack>
+                        <Stack>
+                            {/* */}
+                            <Typography>All Groups</Typography>
+                            {/** Chat List */}
+                        </Stack>
+                    </SimpleBarStyle>
+                </Stack>
           </Stack>
         </Box>
 
