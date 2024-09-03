@@ -57,7 +57,7 @@ const Group = () => {
                     <SimpleBarStyle timeout={500} clickOnTrack={false}>
                         <Stack>
                             {/* */}
-                            <Typography>Pinned</Typography>
+                            <Typography variant="subtitle2" sx={{color: "#676667"}}>Pinned</Typography>
                             {/** Chat List */}
                             {ChatList.filter((el) => el.pinned).map((el) => {
                 return <ChatElement {...el} />;
@@ -65,8 +65,11 @@ const Group = () => {
                         </Stack>
                         <Stack>
                             {/* */}
-                            <Typography>All Groups</Typography>
+                            <Typography variant="subtitle2" sx={{color: "#676667"}}>All Groups</Typography>
                             {/** Chat List */}
+                            {ChatList.filter((el) => !el.pinned).map((el) => {
+                return <ChatElement {...el} />;
+              })}
                         </Stack>
                     </SimpleBarStyle>
                 </Stack>
