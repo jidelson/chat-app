@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, Link, IconButton} from "@mui/material";
+import { Box, Stack, Typography, Link, IconButton, Divider} from "@mui/material";
 import React from "react";
 import {
   Search,
@@ -49,6 +49,7 @@ const Group = () => {
                 <Plus style={{color: theme.palette.primary.main}} />
             </IconButton>
             </Stack>
+            <Divider />
           </Stack>
         </Box>
 
