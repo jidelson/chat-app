@@ -1,4 +1,11 @@
-import { Box, Stack, Typography, Link, IconButton, Divider} from "@mui/material";
+import {
+  Box,
+  Stack,
+  Typography,
+  Link,
+  IconButton,
+  Divider,
+} from "@mui/material";
 import React from "react";
 import {
   Search,
@@ -6,13 +13,13 @@ import {
   StyledInputBase,
 } from "../../components/Search";
 import { MagnifyingGlass, Plus } from "phosphor-react";
-import {useTheme} from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import { SimpleBarStyle } from "../../components/Scrollbar";
 import { ChatList } from "../../data";
 import ChatElement from "../../components/ChatElement";
 
 const Group = () => {
-    const theme = useTheme();
+  const theme = useTheme();
   return (
     <>
       <Stack direction={"row"} sx={{ width: "100%" }}>
@@ -44,35 +51,43 @@ const Group = () => {
                 />
               </Search>
             </Stack>
-            <Stack direction={"row"} justifyContent="space-between" alignItems={"center"}>
-            <Typography variant="subtitle2" component={Link}>
+            <Stack
+              direction={"row"}
+              justifyContent="space-between"
+              alignItems={"center"}
+            >
+              <Typography variant="subtitle2" component={Link}>
                 Create New Group
-            </Typography>
-            <IconButton>
-                <Plus style={{color: theme.palette.primary.main}} />
-            </IconButton>
+              </Typography>
+              <IconButton>
+                <Plus style={{ color: theme.palette.primary.main }} />
+              </IconButton>
             </Stack>
-                <Divider />
-                <Stack sx={{flexGrow: 1, overflow: "scroll", height: "100%"}}>
-                    <SimpleBarStyle timeout={500} clickOnTrack={false}>
-                        <Stack>
-                            {/* */}
-                            <Typography variant="subtitle2" sx={{color: "#676667"}}>Pinned</Typography>
-                            {/** Chat List */}
-                            {ChatList.filter((el) => el.pinned).map((el) => {
-                return <ChatElement {...el} />;
-              })}
-                        </Stack>
-                        <Stack>
-                            {/* */}
-                            <Typography variant="subtitle2" sx={{color: "#676667"}}>All Groups</Typography>
-                            {/** Chat List */}
-                            {ChatList.filter((el) => !el.pinned).map((el) => {
-                return <ChatElement {...el} />;
-              })}
-                        </Stack>
-                    </SimpleBarStyle>
+            <Divider />
+            <Stack sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}>
+              <SimpleBarStyle timeout={500} clickOnTrack={false}>
+                <Stack spacing={2.5}>
+                  {/* */}
+                  <Typography variant="subtitle2" sx={{ color: "#676667" }}>
+                    Pinned
+                  </Typography>
+                  {/** Chat List */}
+                  {ChatList.filter((el) => el.pinned).map((el) => {
+                    return <ChatElement {...el} />;
+                  })}
                 </Stack>
+                <Stack spacing={2.5}>
+                  {/* */}
+                  <Typography variant="subtitle2" sx={{ color: "#676667" }}>
+                    All Groups
+                  </Typography>
+                  {/** Chat List */}
+                  {ChatList.filter((el) => !el.pinned).map((el) => {
+                    return <ChatElement {...el} />;
+                  })}
+                </Stack>
+              </SimpleBarStyle>
+            </Stack>
           </Stack>
         </Box>
 
