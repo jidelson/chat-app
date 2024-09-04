@@ -24,12 +24,21 @@ export default function RHFAutoComplete({ name, label, helperText, ...other }) {
           fullWidth
           value={
             typeof field.value === "number" && field.value === 0
-            ? ""
-            : field.value
+              ? ""
+              : field.value
           }
-          error={!!error}
-          helperText={error ? error.message : helperText}
+          onChange={(event, newValue) =>
+            setValue(name, newValue, { shouldValidate: true })
+          }
           {...other}
+          renderInput={(params) => (
+            <TextField
+              label={label}
+              error={!!error}
+              helperText={error ? error.message : helperText}
+              {...params}
+            />
+          )}
         />
       )}
     />

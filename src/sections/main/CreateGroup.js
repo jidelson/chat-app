@@ -1,10 +1,19 @@
 import React from "react";
-import { Dialog, DialogContent, DialogTitle, Slide, Stack } from "@mui/material";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  Slide,
+  Stack,
+} from "@mui/material";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormProvider from "../../components/hook-form/FormProvider";
 import { RHFTextField } from "../../components/hook-form";
+import RHFAutoComplete from "../../components/hook-form/RHFAutoComplete";
+
+const MEMBERS = ["Name 1", "Name 2", "Name 3"];
 
 // TODO => Create a reusable component
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -37,22 +46,29 @@ const CreateGroupForm = ({}) => {
   } = methods;
 
   const onSubmit = async (data) => {
-    try{
-// API Call
-console.log("DATA", data)
-    }catch(error){
-        console.log("error", error);
+    try {
+      // API Call
+      console.log("DATA", data);
+    } catch (error) {
+      console.log("error", error);
     }
   };
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-        <Stack spacing={3}>
-            <RHFTextField name="title" label="Title" />
-        </Stack>
-
+      <Stack spacing={3}>
+        <RHFTextField name="title" label="Title" />
+        <RHFAutoComplete
+          name="members"
+          label="Members"
+          multiple
+          freeSolo
+          options={MEMBERS.map((option) => option)}
+          ChipProps={{size: "medium"}}
+        />
+      </Stack>
     </FormProvider>
-  )
+  );
 };
 
 const CreateGroup = ({ open, handleClose }) => {
@@ -69,9 +85,10 @@ const CreateGroup = ({ open, handleClose }) => {
         {/* Title */}
         <DialogTitle>Create New Group</DialogTitle>
         {/* Content */}
-        <DialogContent>{/* Form */}
+        <DialogContent>
+          {/* Form */}
 
-            <CreateGroupForm />
+          <CreateGroupForm />
         </DialogContent>
       </Dialog>
     </>
