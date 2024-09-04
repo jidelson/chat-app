@@ -27,8 +27,10 @@ const GeneralApp = () => {
             : theme.palette.background.paper
           }}
       >
+        {/* Conversation */}
         <Conversation />
       </Box>
+      {/* Contact */}
       {sidebar.open && (() => {
         switch (sidebar.type) {
           case "CONTACT":
