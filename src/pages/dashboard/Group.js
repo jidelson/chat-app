@@ -64,7 +64,10 @@ const Group = () => {
               </IconButton>
             </Stack>
             <Divider />
-            <Stack sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}>
+            <Stack
+              spacing={3}
+              sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}
+            >
               <SimpleBarStyle timeout={500} clickOnTrack={false}>
                 <Stack spacing={2.5}>
                   {/* */}
@@ -75,8 +78,6 @@ const Group = () => {
                   {ChatList.filter((el) => el.pinned).map((el) => {
                     return <ChatElement {...el} />;
                   })}
-                </Stack>
-                <Stack spacing={2.5}>
                   {/* */}
                   <Typography variant="subtitle2" sx={{ color: "#676667" }}>
                     All Groups
