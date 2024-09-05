@@ -21,7 +21,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const CreateGroupForm = ({}) => {
+const CreateGroupForm = ({ handleClose }) => {
   const NewGroupSchema = Yup.object().shape({
     title: Yup.string().required("Title is required"),
     members: Yup.array().min(2, "Must have at least 2 members"),
@@ -65,15 +65,20 @@ const CreateGroupForm = ({}) => {
           multiple
           freeSolo
           options={MEMBERS.map((option) => option)}
-          ChipProps={{size: "medium"}}
+          ChipProps={{ size: "medium" }}
         />
-        <Stack spacing={2} direction="row" alignItems={"center"} justifyContent="end">
-        <Button type="submit" variant="contained">
-          Create
-        </Button>
+        <Stack
+          spacing={2}
+          direction="row"
+          alignItems={"center"}
+          justifyContent="end"
+        >
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button type="submit" variant="contained">
+            Create
+          </Button>
+        </Stack>
       </Stack>
-      </Stack>
-      
     </FormProvider>
   );
 };
@@ -95,7 +100,7 @@ const CreateGroup = ({ open, handleClose }) => {
         <DialogContent>
           {/* Form */}
 
-          <CreateGroupForm />
+          <CreateGroupForm handleClose={handleClose} />
         </DialogContent>
       </Dialog>
     </>
