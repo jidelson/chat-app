@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Button,
   Dialog,
   DialogContent,
   DialogTitle,
@@ -66,7 +67,13 @@ const CreateGroupForm = ({}) => {
           options={MEMBERS.map((option) => option)}
           ChipProps={{size: "medium"}}
         />
+        <Stack spacing={2} direction="row" alignItems={"center"} justifyContent="end">
+        <Button type="submit" variant="contained">
+          Create
+        </Button>
       </Stack>
+      </Stack>
+      
     </FormProvider>
   );
 };
