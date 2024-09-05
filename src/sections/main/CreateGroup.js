@@ -95,7 +95,7 @@ const CreateGroup = ({ open, handleClose }) => {
         sx={{ p: 4 }}
       >
         {/* Title */}
-        <DialogTitle>Create New Group</DialogTitle>
+        <DialogTitle sx={{mb: 3}}>Create New Group</DialogTitle>
         {/* Content */}
         <DialogContent>
           {/* Form */}
