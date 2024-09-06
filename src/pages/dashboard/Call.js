@@ -65,7 +65,7 @@ const Call = () => {
                     Pinned
                   </Typography>
                   {/** Call Logs */}
-                    <CallLogElement />
+                    <CallLogElement online={true} />
                   
                 </Stack>
               </SimpleBarStyle>

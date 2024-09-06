@@ -1,8 +1,9 @@
 import { faker } from "@faker-js/faker";
 import { Avatar, Box, Stack } from "@mui/material";
 import React from "react";
+import StyledBadge from "./StyledBadge";
 
-const CallLogElement = () => {
+const CallLogElement = ({online}) => {
   return (
     <>
       <Box
@@ -21,7 +22,18 @@ const CallLogElement = () => {
         alignItems={"center"}
         justifyContent="space-between"
       >
-        <Avatar src={faker.image.avatar()} alt={faker.name.fullName()} />
+        {online ? (
+            <StyledBadge
+              overlap="circular"
+              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+              variant="dot"
+            >
+              <Avatar src={faker.image.avatar} />
+            </StyledBadge>
+          ) : (
+            <Avatar src={faker.image.avatar()} alt={faker.name.fullName()} />
+          )}
+       
 
       </Stack>
 
