@@ -1,16 +1,28 @@
-import { Box, Divider, IconButton, Stack, Typography, Link } from '@mui/material';
-import React from 'react';
-import { Search, SearchIconWrapper, StyledInputBase } from '../../components/Search';
-import { MagnifyingGlass, Plus } from 'phosphor-react';
-import { SimpleBarStyle } from '../../components/Scrollbar';
+import {
+  Box,
+  Divider,
+  IconButton,
+  Stack,
+  Typography,
+  Link,
+} from "@mui/material";
+import React from "react";
+import {
+  Search,
+  SearchIconWrapper,
+  StyledInputBase,
+} from "../../components/Search";
+import { MagnifyingGlass, Plus } from "phosphor-react";
+import { SimpleBarStyle } from "../../components/Scrollbar";
 import { useTheme } from "@mui/material/styles";
-import { CallLogElement } from '../../components/CallElement';
+import { CallLogElement } from "../../components/CallElement";
+import { CallLogs } from "../../data";
 
 const Call = () => {
-    const theme = useTheme();
-    return (
-        <>
-        <Stack direction={"row"} sx={{ width: "100%" }}>
+  const theme = useTheme();
+  return (
+    <>
+      <Stack direction={"row"} sx={{ width: "100%" }}>
         {/* Left */}
         <Box
           sx={{
@@ -47,9 +59,11 @@ const Call = () => {
               <Typography variant="subtitle2" component={Link}>
                 Start New Conversation
               </Typography>
-              <IconButton onClick={() => {
-              //  setOpenDialog(true);
-              }}>
+              <IconButton
+                onClick={() => {
+                  //  setOpenDialog(true);
+                }}
+              >
                 <Plus style={{ color: theme.palette.primary.main }} />
               </IconButton>
             </Stack>
@@ -61,12 +75,11 @@ const Call = () => {
               <SimpleBarStyle timeout={500} clickOnTrack={false}>
                 <Stack spacing={2.5}>
                   {/* */}
-                  <Typography variant="subtitle2" sx={{ color: "#676667" }}>
-                    Pinned
-                  </Typography>
+
                   {/** Call Logs */}
-                    <CallLogElement online={true} />
-                  
+                  {CallLogs.map((el) => (
+                    <CallLogElement {...el} />
+                  ))}
                 </Stack>
               </SimpleBarStyle>
             </Stack>
@@ -76,8 +89,8 @@ const Call = () => {
         {/* Right */}
         {/* TODO => Reuse Conversation Component */}
       </Stack>
-        </>
-    );
+    </>
+  );
 };
 
 export default Call;
