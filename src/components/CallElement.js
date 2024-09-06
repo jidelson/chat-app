@@ -1,4 +1,5 @@
-import { Box } from "@mui/material";
+import { faker } from "@faker-js/faker";
+import { Avatar, Box, Stack } from "@mui/material";
 import React from "react";
 
 const CallLogElement = () => {
@@ -14,7 +15,18 @@ const CallLogElement = () => {
               : theme.palette.background.default,
         }}
         p={2}
-      ></Box>
+      >
+        <Stack
+        direction="row"
+        alignItems={"center"}
+        justifyContent="space-between"
+      >
+        <Avatar src={faker.image.avatar()} alt={faker.name.fullName()} />
+
+      </Stack>
+
+
+      </Box>
     </>
   );
 };
