@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { Avatar, Box, Stack } from "@mui/material";
+import { Avatar, Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import StyledBadge from "./StyledBadge";
 
@@ -33,6 +33,11 @@ const CallLogElement = ({online}) => {
           ) : (
             <Avatar src={faker.image.avatar()} alt={faker.name.fullName()} />
           )}
+
+<Stack spacing={0.3}>
+            <Typography variant="subtitle2">{faker.name.fullName()}</Typography>
+            {/* <Typography variant="caption">{msg}</Typography> */}
+          </Stack>
        
 
       </Stack>
