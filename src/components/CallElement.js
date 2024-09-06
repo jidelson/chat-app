@@ -1,8 +1,8 @@
 import { faker } from "@faker-js/faker";
-import { Avatar, Box, Stack, Typography } from "@mui/material";
+import { Avatar, Box, IconButton, Stack, Typography } from "@mui/material";
 import React from "react";
 import StyledBadge from "./StyledBadge";
-import { ArrowDownLeft, ArrowUpRight } from "phosphor-react";
+import { ArrowDownLeft, ArrowUpRight, Phone } from "phosphor-react";
 
 const CallLogElement = ({ online, incoming, missed }) => {
   return (
@@ -52,7 +52,12 @@ const CallLogElement = ({ online, incoming, missed }) => {
                 </Typography>
               </Stack>
             </Stack>
+           
           </Stack>
+          <IconButton>
+            <Phone color="green" />
+          </IconButton>
+          
         </Stack>
       </Box>
     </>
