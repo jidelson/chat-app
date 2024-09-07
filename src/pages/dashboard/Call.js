@@ -6,7 +6,7 @@ import {
   Typography,
   Link,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import {
   Search,
   SearchIconWrapper,
@@ -17,9 +17,18 @@ import { SimpleBarStyle } from "../../components/Scrollbar";
 import { useTheme } from "@mui/material/styles";
 import { CallLogElement } from "../../components/CallElement";
 import { CallLogs } from "../../data";
+import StartCall from "../../sections/main/StartCall";
 
 const Call = () => {
   const theme = useTheme();
+
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
+
+
   return (
     <>
       <Stack direction={"row"} sx={{ width: "100%" }}>
@@ -61,7 +70,7 @@ const Call = () => {
               </Typography>
               <IconButton
                 onClick={() => {
-                  //  setOpenDialog(true);
+                  setOpenDialog(true);
                 }}
               >
                 <Plus style={{ color: theme.palette.primary.main }} />
@@ -89,6 +98,8 @@ const Call = () => {
         {/* Right */}
         {/* TODO => Reuse Conversation Component */}
       </Stack>
+
+     {openDialog && <StartCall open={openDialog} handleClose={handleCloseDialog} /> } 
     </>
   );
 };
