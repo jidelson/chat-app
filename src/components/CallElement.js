@@ -101,6 +101,7 @@ const CallElement = ({online}) => {
             {/* <Typography variant="caption">{msg}</Typography> */}
           </Stack>
         </Stack>
+        <Stack direction="row" alignItems={"center"}>
         <IconButton>
           <Phone color="green" />
         </IconButton>
@@ -108,6 +109,8 @@ const CallElement = ({online}) => {
         <IconButton>
           <VideoCamera color="green" />
         </IconButton>
+        </Stack>
+        
 
       </Stack>
     </Box>
