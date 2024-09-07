@@ -23,6 +23,7 @@ const StartCall = ({open, handleClose}) => {
         TransitionComponent={Transition}
         keepMounted
         sx={{ p: 4 }}
+        onClose={handleClose}
       >
 
         {/*  */}
