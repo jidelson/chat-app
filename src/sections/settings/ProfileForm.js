@@ -76,7 +76,7 @@ const ProfileForm = () => {
         )}
 
         <RHFTextField name="name" label="Name" helperText={"This name is visible to your contacts"}/>
-        <RHFTextField multiline rows={4} maxRows={5} name="about" label="About" />
+        <RHFTextField multiline rows={3} maxRows={5} name="about" label="About" />
       </Stack>
     </FormProvider>
   );
