@@ -36,21 +36,23 @@ const StartCall = ({ open, handleClose }) => {
         <DialogTitle sx={{ mb: 3 }}>Start Call</DialogTitle>
         {/*  */}
         <DialogContent>
-          <Stack sx={{ width: "100%" }}>
-            <Search>
-              <SearchIconWrapper>
-                <MagnifyingGlass color="#709CE6" />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search..."
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
+          <Stack spacing={3}>
+            <Stack sx={{ width: "100%" }}>
+              <Search>
+                <SearchIconWrapper>
+                  <MagnifyingGlass color="#709CE6" />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search..."
+                  inputProps={{ "aria-label": "search" }}
+                />
+              </Search>
+            </Stack>
+            {/* Call List */}
+            {MembersList.map((el) => (
+              <CallElement {...el} />
+            ))}
           </Stack>
-          {/* Call List */}
-          {MembersList.map((el) => (
-            <CallElement {...el} />
-          ))}
         </DialogContent>
       </Dialog>
     </>
