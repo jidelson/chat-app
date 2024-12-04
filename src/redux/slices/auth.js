@@ -1,0 +1,35 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+    isLoggedIn: false,
+    token: "",
+    isLoading: false
+}
+
+const slice = createSlice({
+    name: "auth",
+    initialState,
+    reducers: {
+        logIn(state, action){
+            state.isLoggedIn = action.payload.isLoggedIn;
+            state.token = action.payload.token;
+        },
+        signOut(state, action){
+            state.isLoggedIn = false;
+            state.token = "";
+        }
+    }
+});
+
+// Reducer
+export default slice.reducer;
+
+
+// Log in
+
+export function LoginUser(formValues){
+    // formValues => {email, password}
+    
+
+
+}
