@@ -209,13 +209,12 @@ const SideBar = () => {
                 <MenuItem
                   onClick={() => {
                     handleClick();
-                    
                   }}
                 >
                   <Stack
-                  onClick={() => {
-                    navigate(getMenuPath(idx));
-                  }}
+                    onClick={() => {
+                      navigate(getMenuPath(idx));
+                    }}
                     sx={{ width: 100 }}
                     direction="row"
                     alignItems={"center"}

@@ -8,7 +8,7 @@ import DashboardLayout from "../layouts/dashboard";
 import { DEFAULT_PATH } from "../config";
 import LoadingScreen from "../components/LoadingScreen";
 import AuthLayout from "../layouts/main";
-import ResetPassword from "../pages/auth/ResetPassword";
+
 
 const Loadable = (Component) => (props) => {
   return (
