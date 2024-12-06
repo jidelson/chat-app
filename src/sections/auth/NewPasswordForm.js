@@ -16,17 +16,17 @@ const NewPasswordForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const NewPasswordSchema = Yup.object().shape({
-    newPassword: Yup.string()
+    password: Yup.string()
       .min(6, "Password must be at least 6 characters")
       .required("Password is required"), // can dictate password length here - see yup library
-    confirmPassword: Yup.string()
+    passwordConfirm: Yup.string()
       .required("Password is required")
-      .oneOf([Yup.ref("newPassword"), null, "Password must match"]),
+      .oneOf([Yup.ref("password"), null, "Password must match"]),
   });
 
   const defaultValues = {
-    newPassword: "",
-    confirmPassword: "",
+    password: "",
+    passwordConfirm: "",
   };
 
   const methods = useForm({
@@ -81,7 +81,7 @@ const NewPasswordForm = () => {
           }}
         />
         <RHFTextField
-          name="confirmPassword"
+          name="passwordConfirm"
           label="Confirm Password"
           type={showPassword ? "text" : "password"}
           InputProps={{
