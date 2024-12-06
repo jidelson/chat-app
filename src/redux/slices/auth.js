@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import axios from "../../utils/axios";
 
+
 const initialState = {
   isLoggedIn: false,
   token: "",
@@ -60,6 +61,9 @@ export function LoginUser(formValues) {
 
 export function LogoutUser(){
   return async (dispatch, getState) => {
+     // Clear the token from localStorage
+     localStorage.removeItem("token"); //added this outside of tut
+
     dispatch(slice.actions.signOut());
   }
 }

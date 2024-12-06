@@ -66,7 +66,7 @@ const SideBar = () => {
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    // alert(event.currentTarget);
+    // alert(event.currentTarget); 
   };
   const handleClose = () => {
     setAnchorEl(null);
@@ -218,7 +218,8 @@ const SideBar = () => {
                     onClick={() => {
                       // if idx is 2 then dispatch logout
                       if (idx === 2) {
-                        dispatch(LogoutUser);
+                        dispatch(LogoutUser());
+                        navigate("/auth/login") //added this outside of tut
                       }
                       else {
                         navigate(getMenuPath(idx));
