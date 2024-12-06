@@ -10,6 +10,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import AuthLayout from "../layouts/main";
 
 
+
 const Loadable = (Component) => (props) => {
   return (
     <Suspense fallback={<LoadingScreen />}>
@@ -28,6 +29,7 @@ export default function Router() {
         { element: <RegisterPage />, path: "register" },
         { element: <ResetPasswordPage />, path: "reset-password" },
         { element: <NewPasswordPage />, path: "new-password" },
+        {element: <VerifyPage />, path: "verify"}
       ],
     },
     {
@@ -42,6 +44,7 @@ export default function Router() {
         {path: "profile", element: <ProfilePage />},
         { path: "404", element: <Page404 /> },
         { path: "*", element: <Navigate to="/404" replace /> },
+        
       ],
     },
     { path: "*", element: <Navigate to="/404" replace /> },
@@ -64,3 +67,4 @@ const CallPage = Loadable(lazy(() => import("../pages/dashboard/Call")));
 const GroupPage = Loadable(lazy(() => import("../pages/dashboard/Group")));
 const Page404 = Loadable(lazy(() => import("../pages/Page404")));
 const ProfilePage = Loadable(lazy(() => import("../pages/dashboard/Profile")));
+const VerifyPage = Loadable(lazy(() => import("../pages/auth/Verify")));
