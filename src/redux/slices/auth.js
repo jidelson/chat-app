@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import axios from "../../utils/axios";
 
-
 const initialState = {
   isLoggedIn: false,
   token: "",
@@ -47,11 +46,12 @@ export function LoginUser(formValues) {
       .then(function (response) {
         console.log(response);
 
-        dispatch(slice.actions.logIn({
+        dispatch(
+          slice.actions.logIn({
             isLoggedIn: true,
-            token: response.data.token
-        }))
-
+            token: response.data.token,
+          })
+        );
       })
       .catch(function (error) {
         console.log(error);
@@ -59,11 +59,55 @@ export function LoginUser(formValues) {
   };
 }
 
-export function LogoutUser(){
+export function LogoutUser() {
   return async (dispatch, getState) => {
-     // Clear the token from localStorage
-     localStorage.removeItem("token"); //added this outside of tut
+    // Clear the token from localStorage
+    localStorage.removeItem("token"); //added this outside of tut
 
     dispatch(slice.actions.signOut());
-  }
+  };
+}
+
+export function ForgotPassword(formValues) {
+  return async (dispatch, getState) => {
+    await axios
+      .post(
+        "/auth/forgot-password",
+        {
+          ...formValues,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+}
+
+export function NewPassword(formValues) {
+  return async (dispatch, getState) => {
+    await axios
+      .post(
+        "/auth/reset-password",
+        { ...formValues },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 }
