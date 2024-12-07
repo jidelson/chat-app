@@ -24,6 +24,22 @@ const RHFCodes = ({ keyName = "", inputs = [], ...other }) => {
               onChange={(event) => {
                 //
               }}
+
+              onFocus={(event) => event.currentTarget.select()}
+              InputProps={{
+                sx: {
+                    width: {xs: 36, sm: 56},
+                    height: {xs: 36, sm: 56},
+                    '& input': {p: 0, textAlign: "center"}
+                }
+              }}
+              inputProps={{
+                maxLength: 1,
+                type: "number"
+              }}
+              {...other}
+
+
             />
           )}
         ></Controller>
