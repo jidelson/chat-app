@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import React from "react";
+import VerifyForm from "../../sections/auth/VerifyForm";
 
 const Verify = () => {
   return (
@@ -10,6 +11,8 @@ const Verify = () => {
           <Typography variant="body2">Sent to email (joeidelson@gmail.com)</Typography>
         </Stack>
       </Stack>
+      {/* Verify Form */}
+      <VerifyForm />
     </>
   );
 };
