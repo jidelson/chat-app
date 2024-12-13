@@ -181,6 +181,12 @@ export function VerifyEmail(formValues) {
       )
       .then((response) => {
         console.log(response);
+        dispatch(
+          slice.actions.logIn({
+            isLoggedIn: true,
+            token: response.data.token,
+          })
+        );
       })
       .catch((error) => {
         console.log(error);
