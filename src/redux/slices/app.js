@@ -55,20 +55,20 @@ export function UpdateSidebarType(type) {
   };
 }
 
-export function showSnackbar({ severity, message }) {
-  return async (dispatch, getState) => {
+export const showSnackbar =
+  ({ severity, message }) =>
+  async (dispatch, getState) => {
     dispatch(
-      slice.actions.openSnackbar({
+      slice.actions.openSnackBar({
         message,
         severity,
       })
     );
 
     setTimeout(() => {
-      dispatch(slice.actions.closeSnackbar());
+      dispatch(slice.actions.closeSnackBar());
     }, 4000);
   };
-}
 
 export const closeSnackbar = () => async (dispatch, getState) => {
   dispatch(slice.actions.closeSnackbar());
