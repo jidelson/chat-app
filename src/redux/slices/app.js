@@ -6,9 +6,13 @@ const initialState = {
     type: "CONTACT", // can be CONTACT, STARRED, SHARED
   },
   snackbar: {
-    open: null,
-    message: null,
-    severity: null,
+    // open: null,
+    // message: null,
+    // severity: null,
+
+    open: false, // Default to false
+    message: "", // Default to an empty string
+    severity: "info", // Default to "info"
   },
 };
 
@@ -54,6 +58,21 @@ export function UpdateSidebarType(type) {
     );
   };
 }
+
+// export function showSnackbar({ severity, message }) {
+//   return async (dispatch, getState) => {
+//     dispatch(
+//       slice.actions.openSnackbar({
+//         message,
+//         severity,
+//       })
+//     );
+
+//     setTimeout(() => {
+//       dispatch(slice.actions.closeSnackbar());
+//     }, 4000);
+//   };
+// }
 
 export const showSnackbar =
   ({ severity, message }) =>

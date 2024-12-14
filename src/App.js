@@ -21,9 +21,22 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 function App() {
   const dispatch = useDispatch();
 
-  const { open, message, severity } = useSelector(
-    (state) => state.app.snackbar
-  );
+  // ORIGINAL
+  // const { open, message, severity } = useSelector(
+  //   (state) => state.app.snackbar
+  // );
+
+    // Safely destructure snackbar state with fallbacks
+    const { open = false, message = "", severity = "info" } = useSelector(
+      (state) => state.app?.snackbar || {}
+    );
+
+
+
+  //debugging
+  console.log("Entire Redux state:", useSelector((state) => state));
+
+  console.log("Snackbar state:", useSelector((state) => state.app.snackbar));
 
   return (
     <>
@@ -48,7 +61,8 @@ function App() {
             onClose={() => {
               dispatch(closeSnackbar());
             }}
-            severity={severity}
+            // severity={severity}
+            severity={severity || "info"}
             sx={{ width: "100%" }}
           >
             {message}
