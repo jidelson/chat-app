@@ -35,13 +35,15 @@ const slice = createSlice({
     // },
     openSnackbar(state, action) {
         console.log("openSnackbar called with:", action.payload); // Debug log
+        console.log("State before update:", state); // Debug the full current state
         if (!state.snackbar) {
-          console.error("snackbar state is undefined"); // Log error if snackbar is missing
+            console.error("snackbar is undefined in openSnackbar!");
         } else {
           state.snackbar.open = true;
           state.snackbar.message = action.payload.message;
           state.snackbar.severity = action.payload.severity;
         }
+        console.log("State after update:", state); // Debug state after update
       },
     // closeSnackbar(state, action) {
     //     console.log("closeSnackbar called"); // Debug log
@@ -51,8 +53,9 @@ const slice = createSlice({
     // state.snackbar.message = "";
     // state.snackbar.severity = "info";
     // },
-    closeSnackbar(state, action) {
+    closeSnackbar(state) {
         console.log("closeSnackbar called"); // Debug log
+        console.log("State before update:", state);
         if (!state.snackbar) {
           console.error("snackbar state is undefined");
         } else {
@@ -60,6 +63,7 @@ const slice = createSlice({
           state.snackbar.message = "";
           state.snackbar.severity = "info";
         }
+        console.log("State after update:", state); // Debug state after update
       },
   },
 });
