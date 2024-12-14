@@ -27,16 +27,40 @@ const slice = createSlice({
     updateSidebarType(state, action) {
       state.sidebar.type = action.payload.type;
     },
+    // openSnackbar(state, action) {
+    //     console.log("openSnackbar called with:", action.payload); // Debug log
+    //   state.snackbar.open = true;
+    //   state.snackbar.severity = action.payload.severity;
+    //   state.snackbar.message = action.payload.message;
+    // },
     openSnackbar(state, action) {
-      state.snackbar.open = true;
-      state.snackbar.severity = action.payload.severity;
-      state.snackbar.message = action.payload.message;
-    },
+        console.log("openSnackbar called with:", action.payload); // Debug log
+        if (!state.snackbar) {
+          console.error("snackbar state is undefined"); // Log error if snackbar is missing
+        } else {
+          state.snackbar.open = true;
+          state.snackbar.message = action.payload.message;
+          state.snackbar.severity = action.payload.severity;
+        }
+      },
+    // closeSnackbar(state, action) {
+    //     console.log("closeSnackbar called"); // Debug log
+    //   state.snackbar.open = false;
+    // //   state.snackbar.severity = null;
+    // //   state.snackbar.message = null;
+    // state.snackbar.message = "";
+    // state.snackbar.severity = "info";
+    // },
     closeSnackbar(state, action) {
-      state.snackbar.open = false;
-      state.snackbar.severity = null;
-      state.snackbar.message = null;
-    },
+        console.log("closeSnackbar called"); // Debug log
+        if (!state.snackbar) {
+          console.error("snackbar state is undefined");
+        } else {
+          state.snackbar.open = false;
+          state.snackbar.message = "";
+          state.snackbar.severity = "info";
+        }
+      },
   },
 });
 

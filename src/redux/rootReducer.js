@@ -6,12 +6,12 @@ import authReducer from "./slices/auth";
 // slices
 
 const rootPersistConfig = {
-    key: 'root',
+    key: "root",
     storage,
-    keyPrefix: 'redux-'
+    keyPrefix: "redux-",
     // whitelist: [],
     // blacklist: [],
-
+    whitelist: ["app"], // Persist only the `app` slice   * OUTSIDE OF TUT*
 }
 
 const rootReducer = combineReducers({

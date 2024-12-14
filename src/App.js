@@ -10,6 +10,7 @@ import React from "react";
 import MuiAlert from "@mui/material/Alert";
 import { useDispatch, useSelector } from "react-redux";
 import { closeSnackbar } from "./redux/slices/app";
+import TestSnackbar from "./components/TestComponent";
 
 const vertical = "bottom";
 const horizontal = "center";
@@ -25,6 +26,11 @@ function App() {
   // const { open, message, severity } = useSelector(
   //   (state) => state.app.snackbar
   // );
+
+
+  //debugging
+  console.log("Redux State:", useSelector((state) => state));
+
 
     // Safely destructure snackbar state with fallbacks
     const { open = false, message = "", severity = "info" } = useSelector(
@@ -71,7 +77,11 @@ function App() {
       ) : (
         <></>
       )}
+
+<TestSnackbar />
+
     </>
+    
   );
 }
 

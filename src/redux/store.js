@@ -11,6 +11,9 @@ const store = configureStore({
     })
 });
 
+console.log("Initial Redux State:", store.getState());
+
+
 const persistor = persistStore(store);
 
 const {dispatch} = store;
