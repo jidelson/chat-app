@@ -78,14 +78,14 @@ export const showSnackbar =
   ({ severity, message }) =>
   async (dispatch, getState) => {
     dispatch(
-      slice.actions.openSnackBar({
+      slice.actions.openSnackbar({
         message,
         severity,
       })
     );
 
     setTimeout(() => {
-      dispatch(slice.actions.closeSnackBar());
+      dispatch(slice.actions.closeSnackbar());
     }, 4000);
   };
 
